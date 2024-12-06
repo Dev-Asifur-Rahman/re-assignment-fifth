@@ -46,7 +46,12 @@ for (const button of get_button) {
       if (donate > balance) {
         get_parent.querySelector("input").value = "";
         alert("Insufficient Amount");
-      } else {
+      }
+      else if(donate <= 0){
+        get_parent.querySelector("input").value = "";
+        alert('Enter Valid Amount')
+      }
+      else {
         balance = calculate_balance(balance, donate);
         get_balance.innerText = balance
         get_parent.querySelector("input").value = "";
@@ -57,11 +62,9 @@ for (const button of get_button) {
         // add donation section 
         const date = new Date()
         const get_heading = get_parent.querySelector('h2')
-        
-        const heading_array = get_heading.innerText.split('Donate')
         const child = document.createElement('div')
         child.innerHTML = `<div class="bg-[#1111111A] rounded-xl py-4 lg:px-6 px-3 my-4 shadow-xl" style="border: 1px solid rgba(17, 17, 17, 0.1);">
-          <p class="font-bold text-[#111111] lg:text-xl text-base">${donate} Taka is Donated ${heading_array[1]}</p>
+          <p class="font-bold text-[#111111] lg:text-xl text-base">${donate} Taka is Donated for ${get_heading.innerText}</p>
           <p class="lg:text-base text-sm text-[#111111B3] font-light">Date : ${date}</p>
         </div>`
         history_section.appendChild(child)
