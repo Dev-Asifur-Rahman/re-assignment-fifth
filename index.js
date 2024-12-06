@@ -53,6 +53,20 @@ for (const button of get_button) {
         const fund_value = parseInt(get_parent.querySelector('span').innerText)
         const total_fund = fund_value + donate
         get_parent.querySelector('span').innerText = total_fund
+
+        // add donation section 
+        const date = new Date()
+        const get_heading = get_parent.querySelector('h2')
+        
+        const heading_array = get_heading.innerText.split('Donate')
+        const child = document.createElement('div')
+        child.innerHTML = `<div class="bg-[#1111111A] rounded-xl py-4 lg:px-6 px-3 my-4 shadow-xl" style="border: 1px solid rgba(17, 17, 17, 0.1);">
+          <p class="font-bold text-[#111111] lg:text-xl text-base">${donate} Taka is Donated ${heading_array[1]}</p>
+          <p class="lg:text-base text-sm text-[#111111B3] font-light">Date : ${date}</p>
+        </div>`
+        history_section.appendChild(child)
+
+        // show modal section 
         const get_modal = document.getElementById('my_modal_5')
         get_modal.showModal()
       }
