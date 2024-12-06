@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Donate Bangladesh</title>
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
       rel="stylesheet"
@@ -13,11 +13,35 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header>
-        <button><a href="blog.html">Blog</a></button>
+    <header class="sticky top-0">
+      <nav class="flex justify-between items-center bg-[#F9F7F3] lg:py-4 p-4 lg:px-10 px-4 ">
+        <a href="blog.html"><button class="lg:block hidden button">Blog</button></a>
+        <!-- <button class="lg:block hidden button"><a href="blog.html">Blog</a></button> -->
+        <div class="flex justify-center items-center gap-1">
+          <img src="images/logo.png" alt="" class="">
+          <p class="lg:text-2xl text-2xl font-semibold">Donate Bangladesh</p>
+        </div>
+        <div class="flex items-center gap-1">
+          <img src="images/coin.png" alt="">
+          <p id="total-amount"></p>
+        </div>
+      </nav>
+      <!-- transparent section  -->
+      <div class="text-center py-4 bg-transparent" style="backdrop-filter: blur(2px);">
+        <!-- blog section for small device  -->
+      <div class="w-full lg:hidden text-center ">
+        <a href="blog.html"><button class="lg:hidden button w-3/5">Blog</button></a>
+      </div>
+        <!-- route secetion  -->
+        <section class="flex justify-center items-center lg:gap-4 gap-2 mt-2">
+          <button id="donation" class="route ">Donation</button>
+          <button id="history" class="route">History</button>
+        </section>
+      </div>
     </header>
     <main>
-        <p class="">Hello</p>
+        <section id="donation-section" class="w-full h-screen">Donation </section>
+        <section id="history-section" class="hidden w-full h-screen">History </section>
     </main>
     <footer>
 
