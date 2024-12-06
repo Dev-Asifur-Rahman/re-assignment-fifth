@@ -1,7 +1,9 @@
-let fund = 7000 
-document.getElementById('total-amount').innerText = fund
-function calculate_fund(fund_value,donation){
-    return fund_value - donation
+let balance = 7000 
+const get_balance = document.getElementById('total-amount')
+get_balance.innerText = balance
+
+function calculate_fund(balance_value,donation){
+    return balance_value- donation
 }
 
 // route click section 
@@ -27,5 +29,13 @@ document.getElementById('history').addEventListener('click',function(event){
     history_section.classList.remove('hidden')
 })
 
-// console.log(donation_section)
-// console.log(history_section)
+// fund add and money decrease section 
+
+// get click button 
+const get_button = donation_section.querySelectorAll('button')
+for(const button of get_button){
+    button.onclick = function (event){
+        const get_parent = event.target.parentNode
+        console.log(get_parent)
+    }
+}
